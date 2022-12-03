@@ -5,6 +5,7 @@ import './Game.css'
 const Game = () => {
     const [board, setBoard] = useState(Array(9).fill(null));
     const [xIsNext, setXisNext] = useState(true);
+    const tie = checkTie(board);
     const winner = calculateWinner(board);
 
     const handleClick = i => {
@@ -43,13 +44,28 @@ const Game = () => {
         return null;
     }
 
+    function checkTie(squares) {
+        let tie = true;
+        for (let i = 0; i < squares.length; i++) {
+            if (squares[i] === null) {
+                tie = false
+            }
+        }
+        return tie;
+    }
+
     return (
         <div className="Game">
-            <Board squares={board} onClick={handleClick} />
-            <div className="win">
-                <p>{winner ? 'Winner: ' + winner : 'Next Player: ' + (xIsNext ? 'X' : 'O')}</p>
+            {/* Shrinks the popup when there is no winner */}
+            <div className={`winner ${winner !== null || tie ? '' : 'shrink'}`}>
+                {/* Display the current winner */}
+                <div className='winner-text'>
+                    {winner ? winner + ' wins!' : (tie ? "It's a tie" : '')}
+                </div>
+                {/* Button used to reset the board */}
                 {renderMoves()}
             </div>
+            <Board squares={board} onClick={handleClick} />
         </div>
     )
 }
