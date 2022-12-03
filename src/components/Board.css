@@ -1,0 +1,13 @@
+.board{
+    display: grid;
+    grid-template-columns: 130px 130px 130px;
+    grid-template-rows: 130px 130px 130px;
+    gap: 5px;
+    background-color: #00dbfc;
+    width: 400px;
+    height: 400px;
+}
+
+
+
+

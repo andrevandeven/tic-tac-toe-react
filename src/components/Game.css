@@ -1,0 +1,17 @@
+.Game{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5vh;
+    backdrop-filter: 5px;
+    background-color: #101010;
+}
+.win{
+    color: white;
+    font: white;
+    width: 200px;
+    margin: 20px auto;
+}

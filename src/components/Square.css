@@ -1,0 +1,15 @@
+@import url(
+'https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+.Square{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    background: #101010;
+    padding: none;
+    border: none;
+	color: whitesmoke;
+	font-family: 'Orbitron', sans-serif;
+	font-weight: 700;
+	font-size: 75px;
+}
